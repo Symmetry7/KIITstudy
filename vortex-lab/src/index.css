@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * KIITConnect Custom Theme
+   * Modern, professional colors with dark-first design
+   */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* KIITConnect Primary - Professional Blue */
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Professional Dark Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Enhanced primary colors for dark mode */
+    --primary: 199 89% 48%;
+    --primary-foreground: 240 10% 3.9%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 199 89% 48%;
+
+    /* Dark mode specific variables */
+    --dark-surface: 240 5.9% 10%;
+    --dark-surface-2: 240 3.7% 15.9%;
+    --dark-surface-3: 240 5.9% 18%;
+    --glass-bg: 240 10% 3.9% / 0.8;
+    --glass-border: 240 3.7% 15.9% / 0.2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-kiit-400 to-connect-400 bg-clip-text text-transparent;
+  }
+
+  .dark .gradient-text {
+    @apply bg-gradient-to-r from-kiit-300 to-connect-300 bg-clip-text text-transparent;
+  }
+
+  .kiit-shadow {
+    box-shadow: 0 4px 14px 0 rgba(14, 165, 233, 0.15);
+  }
+
+  .dark .kiit-shadow {
+    box-shadow: 0 4px 20px 0 rgba(14, 165, 233, 0.25);
+  }
+
+  .connect-shadow {
+    box-shadow: 0 4px 14px 0 rgba(217, 70, 239, 0.15);
+  }
+
+  .dark .connect-shadow {
+    box-shadow: 0 4px 20px 0 rgba(217, 70, 239, 0.25);
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-lg;
+  }
+
+  .dark .glass-effect {
+    @apply bg-gray-900/70 backdrop-blur-xl border border-gray-800/30 shadow-2xl;
+  }
+
+  .login-card {
+    @apply bg-white/95 backdrop-blur-xl border border-gray-200/50 shadow-xl;
+  }
+
+  .dark .login-card {
+    @apply bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl;
+  }
+
+  .theme-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .dark-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  }
+
+  .light-gradient {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  }
+
+  /* Gradient backgrounds for buttons and elements */
+  .bg-kiit-gradient {
+    @apply bg-gradient-to-r from-kiit-500 to-kiit-600;
+  }
+
+  .bg-connect-gradient {
+    @apply bg-gradient-to-r from-connect-500 to-connect-600;
+  }
+
+  /* Enhanced shadows for cards and buttons */
+  .shadow-kiit {
+    box-shadow:
+      0 4px 14px 0 rgba(14, 165, 233, 0.25),
+      0 2px 4px 0 rgba(14, 165, 233, 0.05);
+  }
+
+  .hover\:shadow-kiit:hover {
+    box-shadow:
+      0 8px 25px 0 rgba(14, 165, 233, 0.35),
+      0 4px 8px 0 rgba(14, 165, 233, 0.1);
+  }
+
+  .shadow-connect {
+    box-shadow:
+      0 4px 14px 0 rgba(217, 70, 239, 0.25),
+      0 2px 4px 0 rgba(217, 70, 239, 0.05);
+  }
+
+  .hover\:shadow-connect:hover {
+    box-shadow:
+      0 8px 25px 0 rgba(217, 70, 239, 0.35),
+      0 4px 8px 0 rgba(217, 70, 239, 0.1);
+  }
+
+  /* Animated pulse for background elements */
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Google button custom styling */
+  .google-btn {
+    @apply bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 hover:border-gray-400 transition-all duration-300;
+  }
+
+  .dark .google-btn {
+    @apply bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-600 hover:border-gray-500;
+  }
+}
